@@ -274,7 +274,7 @@ field can be accessed by the user agent.
 ## {{ContactAddress}} ## {#contact-address}
 
 <script type="idl">
-[Exposed=Window]
+[Exposed=Window, SecureContext]
 interface ContactAddress {
   [Default] object toJSON();
   readonly attribute DOMString city;
@@ -343,7 +343,7 @@ dictionary ContactsSelectOptions {
     boolean multiple = false;
 };
 
-[Exposed=Window,SecureContext]
+[Exposed=Window, SecureContext]
 interface ContactsManager {
     Promise<sequence<ContactProperty>> getProperties();
     Promise<sequence<ContactInfo>> select(sequence<ContactProperty> properties, optional ContactsSelectOptions options = {});
